@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_grp"
+    app:startDestination="@id/anasayfaFragment">
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.yemeksiparisapplication.userİnterface.fragment.AnasayfaFragment"
+        android:label="AnasayfaFragment" >
+        <action
+            android:id="@+id/anasayfa_to_detay"
+            app:destination="@id/detayFragment" />
+        <action
+            android:id="@+id/action_anasayfaFragment_to_sepetFragment"
+            app:destination="@id/sepetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detayFragment"
+        android:name="com.example.yemeksiparisapplication.userİnterface.fragment.DetayFragment"
+        android:label="DetayFragment" >
+        <argument
+            android:name="sepet"
+            app:argType="com.example.yemeksiparisapplication.data.entity.Sepet" />
+        <action
+            android:id="@+id/detay_to_anasayfa"
+            app:destination="@id/anasayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.example.yemeksiparisapplication.userİnterface.fragment.SepetFragment"
+        android:label="SepetFragment" >
+        <action
+            android:id="@+id/action_sepetFragment_to_anasayfaFragment"
+            app:destination="@id/anasayfaFragment" />
+    </fragment>
+</navigation>
